@@ -339,7 +339,7 @@ func (p *Parser) parse() (*Table, error) {
 		Extras:      make(map[string]string),
 	}
 	for {
-		if tok, lit := p.scanIgnoreWhitespace(); tok == DROP || tok == LOCK || tok == UNLOCK {
+		if tok, lit := p.scanIgnoreWhitespace(); tok == DROP || tok == LOCK || tok == UNLOCK || tok == ANNOTATION {
 			for { // ignore drop, lock and unlock statement
 				if tok, _ := p.scanIgnoreWhitespace(); tok == SEMI_COLON {
 					break
